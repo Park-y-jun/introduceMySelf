@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: #fdeedc;
+}
+.web__page {
+  display: flex;
+}
+.web__page > header {
+  width: 30%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background-color: #ffd8a9;
+}
+.web__page > header > nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+}
+.web__page > header > nav > img {
+  width: 250px;
+  height: 350px;
+  border: 1px solid #ffd8a9;
+  box-sizing: border-box;
+  border-radius: 60%;
+}
+.web__page > header > nav > ul {
+  margin-top: 50px;
+}
+
+.web__page > header > nav > ul > li {
+  padding: 20px;
+  list-style: none;
+}
+
+.web__page > main {
+  margin-top: 300px;
+  margin-left: 50px;
+  width: 100%;
+  background-color: #fdeedc;
+}
+
+.web__page > main > #profile > h2 {
+  font-size: 100px;
+}
+.web__page > main > #profile > .email {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+.web__page > main > #profile > .email > p {
+  margin-left: 10px;
+}
+.web__page > main > #profile > .phone__number {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+.web__page > main > #profile > .phone__number > p {
+  margin: 5px 0 0 10px;
+}
+.web__page > main > #skills {
+  margin-top: 500px;
+}
+.web__page > main > #skills .skill__img {
+  margin-top: 50px;
+  width: 300px;
+  height: 300px;
+}
+.web__page > main > #education {
+  margin-top: 500px;
+}
+.web__page > main > #favorite {
+  margin-top: 500px;
+}
+footer {
+  background-color: azure;
+}
