@@ -11,12 +11,21 @@ body {
 .web__page {
   display: flex;
 }
-.web__page > header {
+
+.web__page .sidebar {
   width: 30%;
   height: 100vh;
   position: sticky;
   top: 0;
   background-color: #ffd8a9;
+  transform: translate(-100%);
+  transition: transform 1s linear;
+}
+.web__page .sidebar > nav > ul > li:hover {
+  cursor: pointer;
+}
+.show {
+  transform: translate(0) !important;
 }
 .web__page > header > nav {
   display: flex;
@@ -41,12 +50,21 @@ body {
 }
 
 .web__page > main {
-  margin-top: 300px;
-  margin-left: 50px;
   width: 100%;
   background-color: #fdeedc;
+  box-sizing: border-box;
+}
+.web__page > main > .nav__icon {
+  position: fixed;
+  margin-top: 10px;
+  right: 10px;
 }
 
+.web__page > main > #profile {
+  margin-top: 300px;
+  margin-left: 50px;
+  box-sizing: border-box;
+}
 .web__page > main > #profile > h2 {
   font-size: 100px;
 }
@@ -67,19 +85,72 @@ body {
   margin: 5px 0 0 10px;
 }
 .web__page > main > #skills {
-  margin-top: 500px;
+  box-sizing: border-box;
 }
 .web__page > main > #skills .skill__img {
   margin-top: 50px;
   width: 300px;
   height: 300px;
 }
+.web__page > main > #movies {
+  padding-top: 2000px;
+  display: grid;
+  grid-template-columns: 250px 250px 250px 250px 250px;
+  grid-template-rows: 250px 250px 250px 250px;
+  margin: 40px 0 0 40px;
+  box-sizing: border-box;
+}
+
+.web__page > main > #movies > .movie > img {
+  width: 200px;
+  height: 200px;
+}
 .web__page > main > #education {
-  margin-top: 500px;
+  box-sizing: border-box;
 }
-.web__page > main > #favorite {
-  margin-top: 500px;
+.web__page > main > #education > ul {
+  margin-left: 50px;
 }
-footer {
-  background-color: azure;
+.web__page > main > #education > ul > li {
+  margin: 15px;
+  font-size: 24px;
+}
+#gallery {
+  padding: 0 0 0 50px;
+  box-sizing: border-box;
+}
+.container {
+  position: relative;
+}
+.slides {
+  position: absolute;
+  opacity: 0;
+  z-index: 0;
+}
+.showing {
+  opacity: 1;
+  z-index: 1;
+}
+#gallery > .container > .slides img {
+  width: 400px;
+  height: 600px;
+}
+.prev {
+  position: fixed;
+  top: 720px;
+}
+.next {
+  position: fixed;
+  top: 720px;
+  left: 880px;
+}
+.footer__bar {
+  background-color: #ffd8a9;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 20px;
+  transform: translate(-100%);
+  transition: transform 2.5s ease-in-out 1s;
+  z-index: 2;
 }
