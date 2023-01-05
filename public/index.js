@@ -56,19 +56,33 @@ const movie = () => {
             const videoList = data.results[0];
             console.log(videoList);
             const videoDiv = document.createElement("div");
-            favoritMovie.classList.add("video");
+            videoDiv.classList.add("video");
             videoDiv.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoList.key}" title="YouTube video player"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   allowfullscreen></iframe> 
-  <button>X</button>`;
+  <button class="xBtn">X</button>`;
             movies.appendChild(videoDiv);
+            const closeBtn = document.querySelector(".xBtn");
+            const videoPlayer = document.querySelector(".video");
+            closeBtn.addEventListener("click", () => {
+              movies.removeChild(videoPlayer);
+            });
           });
       });
     }, 2000);
   });
 };
 clickMovies.addEventListener("click", movie);
+
+// const closeBtn = document.querySelector(".xBtn");
+// const videoPlayer = document.querySelector(".video");
+
+// const close = () => {
+//   alert("하이");
+//   //movies.remove(videoPlayer);
+// };
+// closeBtn.addEventListener("click", close);
 
 const firstSlide = document.querySelector(".slides:first-child");
 const lastSlide = document.querySelector(".slides:last-child");
