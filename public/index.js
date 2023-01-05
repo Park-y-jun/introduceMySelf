@@ -18,6 +18,7 @@ const clickMovies = document.querySelector(".show__movies");
 //top level await
 const spinner = document.querySelector("#loading");
 const datas = await fetch(url).then((res) => res.json());
+console.log(datas);
 
 const movie = () => {
   window.scrollTo({
@@ -35,30 +36,43 @@ const movie = () => {
 
   movieList.forEach((data) => {
     setTimeout(() => {
-      const { title, poster_path } = data;
+      const { title, poster_path, id } = data;
       const favoritMovie = document.createElement("div");
       favoritMovie.classList.add("movie");
-      favoritMovie.innerHTML = `<img src="${
+      favoritMovie.innerHTML = `<img id="${id}" src="${
         POSTER_URL + poster_path
       }" alt="${title}">
-    <p>${title}</p>
-    <button id="trailer">예고편</button>`;
+    <p>${title}</p>`;
+
       movies.appendChild(favoritMovie);
+      document.getElementById(id).addEventListener("click", () => {
+        console.log(id);
+        fetch(
+          `https://api.themoviedb.org/3/movie/${id}/videos?${API_KEY}&language=en-US`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            const videoList = data.results[0];
+            console.log(videoList);
+            const videoDiv = document.createElement("div");
+            favoritMovie.classList.add("video");
+            videoDiv.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoList.key}" title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen></iframe> 
+  <button>X</button>`;
+            movies.appendChild(videoDiv);
+          });
+        //       `<iframe width="560" height="315" src="https://www.youtube.com/embed/${key}" title="YouTube video player"
+        // frameborder="0"
+        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        // allowfullscreen></iframe>`
+      });
     }, 2000);
   });
 };
 clickMovies.addEventListener("click", movie);
-
-//<a href="https://api.themoviedb.org/3/movie/${id}/videos?${API_KEY}&language=en-US"></a>
-
-// const showTrailer = document.querySelector("#trailer");
-
-// const movieTrailer = async() => {
-//   const movieList = datas.results;
-//   const
-// };
-
-// showTrailer.addEventListener("click", movieTrailer);
 
 const firstSlide = document.querySelector(".slides:first-child");
 const lastSlide = document.querySelector(".slides:last-child");

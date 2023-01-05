@@ -6,7 +6,7 @@ anychart.onDocumentReady(() => {
       ["T", 50],
       ["S", 55],
       ["P", 55],
-      ["빈칸", 0],
+
       ["E", 55],
       ["F", 80],
       ["N", 85],
@@ -58,11 +58,11 @@ anychart.onDocumentReady(() => {
         elem.remove();
       }
     });
-    gYAxisElems.forEach((elem) => {
-      if (elem.getAttribute("data-ac-wrapper-id") === "36") {
-        elem.remove();
-      }
-    });
+    // gYAxisElems.forEach((elem) => {
+    //   if (elem.getAttribute("data-ac-wrapper-id") === "36") {
+    //     elem.remove();
+    //   }
+    // });
   };
   hideAdLink();
   hideYAxis();
