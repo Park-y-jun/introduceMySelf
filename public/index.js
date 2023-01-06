@@ -91,9 +91,6 @@ const nextBtn = () => {
       //원점 복귀
       firstSlide.classList.add("showing");
     }
-  } else {
-    // 첫 클릭
-    firstSlide.classList.add("showing");
   }
 };
 next.addEventListener("click", nextBtn);
@@ -109,9 +106,6 @@ const prevBtn = () => {
       //원점 복귀
       lastSlide.classList.add("showing");
     }
-  } else {
-    //첫 클릭
-    lastSlide.classList.add("showing");
   }
 };
 prev.addEventListener("click", prevBtn);
