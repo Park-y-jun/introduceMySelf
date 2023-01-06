@@ -116,7 +116,7 @@ main {
   height: 300px;
 }
 .web__page > main > #movies {
-  padding-top: 2000px;
+  padding-top: 2001px;
   padding-bottom: 200px;
   display: grid;
   grid-template-columns: 250px 250px 250px 250px 250px;
