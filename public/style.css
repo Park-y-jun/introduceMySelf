@@ -169,7 +169,7 @@ main {
 .prev {
   position: absolute;
   margin-top: 10px;
-  top: 2880px;
+  top: 3200px;
   height: 40px;
   width: 40px;
   font-size: 20px;
@@ -178,7 +178,7 @@ main {
 .next {
   position: absolute;
   margin-top: 10px;
-  top: 2880px;
+  top: 3200px;
   left: 850px;
   height: 40px;
   width: 40px;
