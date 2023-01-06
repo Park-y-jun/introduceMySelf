@@ -75,15 +75,6 @@ const movie = () => {
 };
 clickMovies.addEventListener("click", movie);
 
-// const closeBtn = document.querySelector(".xBtn");
-// const videoPlayer = document.querySelector(".video");
-
-// const close = () => {
-//   alert("하이");
-//   //movies.remove(videoPlayer);
-// };
-// closeBtn.addEventListener("click", close);
-
 const firstSlide = document.querySelector(".slides:first-child");
 const lastSlide = document.querySelector(".slides:last-child");
 const prev = document.querySelector(".prev");
